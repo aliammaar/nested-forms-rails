@@ -1,0 +1,11 @@
+# I am a PG lover
+development:
+  adapter: postgresql
+  host: localhost
+  database: nested_form_rails_dev
+  username: postgres
+  password: postgres
+  encoding: unicode
+  port: 5432
+  pool: 5
+
