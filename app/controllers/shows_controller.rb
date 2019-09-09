@@ -10,7 +10,8 @@ class ShowsController < ApplicationController
 
   def new
     @show = Show.new
-    @show.seasons.build
+    # @show.seasons.build
+    @show.seasons.build.episodes.build
   end
 
   def edit
@@ -56,9 +57,14 @@ class ShowsController < ApplicationController
   end
 
   def show_params
+    # params.require(:show).permit(:name, 
+    #   :seasons_attributes => [:number]
+    #   )
     params.require(:show).permit(:name, 
-      :seasons_attributes => [:number]
-      )
+      :seasons_attributes => [:number,
+        :episodes_attributes => [:title]
+      ]
+    )
   end
   
 end

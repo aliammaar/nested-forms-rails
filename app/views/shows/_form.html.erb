@@ -20,6 +20,14 @@
     <%= form.fields_for :seasons do |s| %>
       <%= s.label :number %>
       <%= s.number_field :number %>
+
+      <div>
+        <%= s.fields_for :episodes do |e| %>
+          <%= e.label :title %>
+          <%= e.text_field :title %>
+        <% end %>
+      </div>
+      
     <% end %>
   </div>
 
